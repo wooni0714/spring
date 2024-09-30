@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Join</title>
+</head>
+<body>
+<h1>Create an Account</h1>
+
+<form th:action="@{/user-join}" method="post">
+    <div>
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" required />
+    </div>
+    <div>
+        <label for="userPassword">Password:</label>
+        <input type="password" id="userPassword" name="userPassword" required />
+    </div>
+    <div>
+        <label for="roles">Roles (comma separated):</label>
+        <input type="text" id="roles" name="roles" value="USER" required />
+    </div>
+    <div>
+        <button type="submit">Sign Up</button>
+    </div>
+</form>
+
+<p><a th:href="@{/login-view}">Already have an account? Log in here</a></p>
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Sign Up</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Sign Up</h1>-->
+<!--<hr>-->
+<!--<form id="joinForm">-->
+<!--    <label for="userId">ID:</label>-->
+<!--    <input type="text" id="userId" name="userId" required> <br>-->
+<!--    <label for="userPassword">Password:</label>-->
+<!--    <input type="password" id="userPassword" name="userPassword" required> <br>-->
+<!--    <button type="submit">Join</button>-->
+<!--</form>-->
+<!--<script>-->
+<!--    document.getElementById('joinForm').addEventListener('submit', function (event) {-->
+<!--        event.preventDefault();-->
+
+<!--        const userId = document.getElementById('userId').value;-->
+<!--        const userPassword = document.getElementById('userPassword').value;-->
+
+<!--        const requestData = {-->
+<!--            userId: userId,-->
+<!--            userPassword: userPassword-->
+<!--        };-->
+
+<!--        fetch('/user-join', {-->
+<!--            method: 'POST',-->
+<!--            headers: {-->
+<!--                'Content-Type': 'application/json'-->
+<!--            },-->
+<!--            body: JSON.stringify(requestData)-->
+<!--        })-->
+<!--            .then(response => {-->
+<!--                if (!response.ok) {-->
+<!--                    throw new Error('Network response was not ok');-->
+<!--                }-->
+<!--                return response.text();-->
+<!--            })-->
+<!--            .then(data => {-->
+<!--                alert(data);-->
+<!--                // 로그인 성공 후 페이지 리다이렉트-->
+<!--                window.location.href = '/login'; // 로그인 성공 시 이동할 페이지-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--                alert('Error: ' + error.message);-->
+<!--            });-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
