@@ -55,6 +55,22 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-jpql" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/spring-jpql" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring-jwt" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/spring-jwt" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/spring-security" />
         <option name="modules">
           <set>
