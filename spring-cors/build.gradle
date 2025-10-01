@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+    group = "com.wooni"
+    version = "0.0.1-SNAPSHOT"
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    dependencies {
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
+}

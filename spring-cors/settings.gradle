@@ -1,0 +1,2 @@
+rootProject.name = "spring-cors"
+include("cors-server", "cors-web")
