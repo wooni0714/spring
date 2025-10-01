@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Builder
+
 public record MemberDto(
         String username,
         @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -17,19 +17,23 @@ public record MemberDto(
         String nickname,
         Set<AuthorityDto> authorityDtoSet
 ) {
+    @Builder
+    public static MemberDto of(String username, String password, String nickname, Set<AuthorityDto> authorityDtoSet) {
+        return new MemberDto(username, password, nickname, authorityDtoSet);
+    }
 
     public static MemberDto from(Member member) {
         if (member == null) {
             return null;
         }
-
-        return MemberDto.builder()
-                .username(member.getUsername())
-                .nickname(member.getNickname())
-                .authorityDtoSet(member.getAuthorities().stream()
+        return MemberDto.of(
+                member.getUsername(),
+                null,
+                member.getNickname(),
+                member.getAuthorities().stream()
                         .map(authority -> new AuthorityDto(authority.getAuthorityName()))
-                        .collect(Collectors.toSet()))
-                .build();
+                        .collect(Collectors.toSet())
+        );
     }
 
     public Member toMember() {
