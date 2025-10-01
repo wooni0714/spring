@@ -1,0 +1,11 @@
+spring:
+  cache:
+    type: caffeine
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+# Caffeine
+caffeine:
+  spec: maximumSize=10000,expireAfterWrite=5m
